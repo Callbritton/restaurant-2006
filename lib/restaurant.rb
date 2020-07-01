@@ -15,4 +15,13 @@ class Restaurant
     dishes << dish
   end
 
-end 
+  def open_for_lunch?
+    opening_time.to_i < 12
+  end
+
+  def menu_dish_names
+    dish_upcase = []
+    @dishes.each { |dish| dish_upcase << dish.upcase}
+    return dish_upcase 
+  end
+end

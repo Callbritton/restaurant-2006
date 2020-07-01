@@ -51,8 +51,29 @@ class RestaurantTest < Minitest::Test
 
     assert_equal ['Burrata', 'Pizzetta', 'Ravioli'], restaurant.dishes
   end
-end
+
 
   #Iteration 3 Tests:
 
-  
+  def test_it_is_open_for_lunch
+    #skip
+    restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
+    restaurant2 = Restaurant.new('16:00', 'Il Posto')
+
+    assert restaurant1.open_for_lunch?
+
+    refute restaurant2.open_for_lunch?
+  end
+
+  def test_if_menu_is_accurate
+    #skip
+    restaurant2 = Restaurant.new('16:00', 'Il Posto')
+
+    restaurant2.add_dish('Burrata')
+    restaurant2.add_dish('Pizzetta')
+    restaurant2.add_dish('Ravioli')
+
+    assert_equal ["BURRATA", "PIZZETTA", "RAVIOLI"], restaurant2.menu_dish_names
+  end
+
+end
