@@ -22,6 +22,13 @@ class Restaurant
   def menu_dish_names
     dish_upcase = []
     @dishes.each { |dish| dish_upcase << dish.upcase}
-    return dish_upcase 
+    return dish_upcase
   end
+
+  # def announce_closing_time(time_open)
+  #
+  # end
+
+# commented out as I have no idea! Hepl!
+
 end
